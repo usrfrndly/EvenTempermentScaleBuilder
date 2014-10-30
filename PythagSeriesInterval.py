@@ -24,6 +24,7 @@ class PythagSeriesInterval(Interval):
         self.frequency = self.get_frequency()
         self.octave = self.get_octave()
         self.octave_denom = self.get_octave_denom()
+        self.new_numerator = self.get_new_numerator()
         self.new_denom = self.get_new_denom()
         self.factor_reduced = self.get_factor_reduced()
         self.final_frequency = self.get_final_frequency()
@@ -66,6 +67,9 @@ class PythagSeriesInterval(Interval):
 
     def get_frequency(self):
         return self.base_fq * self.factor
+
+    def get_new_numerator(self):
+        return self.numerator
 
     def get_new_denom(self):
         return self.denom * self.octave_denom
